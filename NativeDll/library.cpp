@@ -7,7 +7,17 @@ void hello(char *interStr) {
     << "String from managed: " << interStr << std::endl;
 }
 
-void append_String(char *dest, const char *src, unsigned long n) {
+void append_string_ansi(char *dest, const char *src, unsigned long n) {
+    std::cout << "Length in C++: " << strlen(src) << std::endl;
+    memmove(dest, src, n);
+}
+
+void append_string_unicode(wchar_t *dest, const wchar_t *src, unsigned long n) {
+    std::wcout << "Length in C++: " << wcslen(src) << std::endl;
+    wmemmove(dest, src, n);
+}
+
+void append_string_byte(char *dest, const char *src, unsigned long n) {
     std::cout << "Length in C++: " << strlen(src) << std::endl;
     memmove(dest, src, n);
 }
